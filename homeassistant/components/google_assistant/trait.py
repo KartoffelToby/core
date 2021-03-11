@@ -744,6 +744,12 @@ class TemperatureSettingTrait(_Trait):
             self.hass.config.units.temperature_unit
         )
 
+        # Add a default min max value for set temperature to display correctly in Google Assistant App
+        response["thermostatTemperatureRange"] = {
+            "minThresholdCelsius": 5.0,
+            "maxThresholdCelsius": 30.0
+        }
+
         if domain == sensor.DOMAIN:
             device_class = attrs.get(ATTR_DEVICE_CLASS)
             if device_class == sensor.DEVICE_CLASS_TEMPERATURE:
@@ -763,7 +769,7 @@ class TemperatureSettingTrait(_Trait):
                 mode in modes for mode in ("heatcool", "heat", "cool")
             ):
                 modes.append("on")
-            response["availableThermostatModes"] = ",".join(modes)
+            response["availableThermostatModes"] = modes
 
         return response
 
