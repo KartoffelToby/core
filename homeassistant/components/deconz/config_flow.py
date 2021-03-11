@@ -23,6 +23,7 @@ from .const import (
     CONF_ALLOW_CLIP_SENSOR,
     CONF_ALLOW_DECONZ_GROUPS,
     CONF_ALLOW_NEW_DEVICES,
+    CONF_SET_AUTO_TO_HEAT_GA,
     CONF_BRIDGE_ID,
     DEFAULT_PORT,
     DOMAIN,
@@ -289,6 +290,10 @@ class DeconzOptionsFlowHandler(config_entries.OptionsFlow):
                     vol.Optional(
                         CONF_ALLOW_NEW_DEVICES,
                         default=self.gateway.option_allow_new_devices,
+                    ): bool,
+                    vol.Optional(
+                        CONF_SET_AUTO_TO_HEAT_GA,
+                        default=self.gateway.option_set_auto_to_heat_ga,
                     ): bool,
                 }
             ),

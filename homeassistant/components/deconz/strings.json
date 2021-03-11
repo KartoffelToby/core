@@ -40,7 +40,8 @@
         "data": {
           "allow_clip_sensor": "Allow deCONZ CLIP sensors",
           "allow_deconz_groups": "Allow deCONZ light groups",
-          "allow_new_devices": "Allow automatic addition of new devices"
+          "allow_new_devices": "Allow automatic addition of new devices",
+          "set_auto_to_heat_ga": "Set climate mode auto to heat if heat means boost and device has no preset mode"
         },
         "description": "Configure visibility of deCONZ device types",
         "title": "deCONZ options"

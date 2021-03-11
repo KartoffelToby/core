@@ -95,7 +95,8 @@
                 "data": {
                     "allow_clip_sensor": "deCONZ CLIP-Sensoren zulassen",
                     "allow_deconz_groups": "deCONZ-Lichtgruppen zulassen",
-                    "allow_new_devices": "Automatisches Hinzuf\u00fcgen von neuen Ger\u00e4ten zulassen"
+                    "allow_new_devices": "Automatisches Hinzuf\u00fcgen von neuen Ger\u00e4ten zulassen",
+                    "set_auto_to_heat_ga": "Setzt bei Thermostaten den Modus auto auf heat damit ger\u00e4te wie das Euronics Spirti Zigbee richtig abgebildet werden."
                 },
                 "description": "Sichtbarkeit der deCONZ-Ger\u00e4tetypen konfigurieren",
                 "title": "deCONZ-Optionen"
