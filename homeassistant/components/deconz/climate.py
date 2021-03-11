@@ -117,7 +117,7 @@ class DeconzThermostat(DeconzDevice, ClimateEntity):
 
         # if settings climate auto is heat
         temp_modes = HVAC_MODE_TO_DECONZ
-        if(gateway.option_set_auto_to_heat_ga):
+        if gateway.option_set_auto_to_heat_ga:
             temp_modes = {
                 HVAC_MODE_COOL: "cool",
                 HVAC_MODE_HEAT: "auto",
@@ -196,7 +196,9 @@ class DeconzThermostat(DeconzDevice, ClimateEntity):
             raise ValueError(f"Unsupported HVAC mode {hvac_mode}")
 
         data = {"mode": self._hvac_mode_to_deconz[hvac_mode]}
-        if len(self._hvac_mode_to_deconz) == 2 and not self.auto_to_heat_mapping:  # Only allow turn on and off thermostat
+        if (
+            len(self._hvac_mode_to_deconz) == 2 and not self.auto_to_heat_mapping
+        ):  # Only allow turn on and off thermostat
             data = {"on": self._hvac_mode_to_deconz[hvac_mode]}
 
         await self._device.async_set_config(data)

@@ -747,7 +747,7 @@ class TemperatureSettingTrait(_Trait):
         # Add a default min max value for set temperature to display correctly in Google Assistant App
         response["thermostatTemperatureRange"] = {
             "minThresholdCelsius": 5.0,
-            "maxThresholdCelsius": 30.0
+            "maxThresholdCelsius": 30.0,
         }
 
         if domain == sensor.DOMAIN:
